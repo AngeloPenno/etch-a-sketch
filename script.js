@@ -1,7 +1,6 @@
 let sketchSquare = document.querySelector('#sketchSquare');
 let aspect = 16;
 
-
 for (let i = 0; i < aspect; i++) {
   let row = document.createElement('div');
   row.classList.add('row');
@@ -16,13 +15,12 @@ for (let i = 0; i < aspect; i++) {
   }
 }
 
-// sketchSquare.addEventListener('mousemove', function(e) {
-//   const target = e.target.classList;
-//   console.log(target);
-// })
-
 let squares = document.querySelectorAll('.column');
 
-squares.forEach(addEventListener('mousedown', function(e) {
-  console.log(e.target)
-}))
+[...squares].forEach(function(square) {
+  square.addEventListener('mousemove', (e) => {
+    if (e.which === 1) {
+      e.target.classList.add('paint');
+    }
+  });
+})

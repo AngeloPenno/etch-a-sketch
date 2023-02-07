@@ -20,6 +20,10 @@ body {
 }
 
 .column {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   flex: auto;
+}
+
+.paint {
+  background-color: black;
 }
