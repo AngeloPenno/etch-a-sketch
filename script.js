@@ -1,28 +1,75 @@
-let sketchSquare = document.querySelector('#sketchSquare');
-let aspect = 100;
+const sketchSquare = document.querySelector('#sketchSquare');
+let amount = 16;
+let paintColor = 'black';
+createSquares(amount);
+addPaintListeners();
 
-// Creates all the divs needed based on the aspect variable
-for (let i = 0; i < aspect; i++) {
-  let row = document.createElement('div');
-  row.classList.add('row');
+const amountInput = document.querySelector('#amount');
 
-  sketchSquare.append(row);
+// Creates all the divs needed based on the aspect variable;
+function createSquares(num) {
+  for (let i = 0; i < num; i++) {
+    let row = document.createElement('div');
+    row.classList.add('row');
 
-  for (let j = 0; j < aspect; j++) {
-    let column = document.createElement('div');
-    column.classList.add('column');
-    
-    row.append(column);
-  }
-}
+    sketchSquare.append(row);
 
-// Listens to the mouse entering the divs while clicked and paints them
-let squares = document.querySelectorAll('.column');
-
-[...squares].forEach(function(square) {
-  square.addEventListener('mouseenter', (e) => {
-    if (e.which === 1) {
-      e.target.classList.add('paint');
+    for (let j = 0; j < num; j++) {
+      let column = document.createElement('div');
+      column.classList.add('column');
+      
+      row.append(column);
     }
+}};
+
+// Changes the amount of squares based on the number inserted by the user;
+amountInput.addEventListener('change', (e) => {
+  const numParam = document.querySelector('#numParam');
+  if (e.target.value > 100 || e.target.value < 4) {
+    numParam.textContent = 'Min: 4 - Max: 100';
+  } else {
+    sketchSquare.innerHTML = '';
+    amount = e.target.value;
+    createSquares(amount);
+    addPaintListeners();
+    numParam.textContent = '';
+  }
+})
+
+// Listens to mousedown and mouseenter on the squares and calls the paint function on them;
+function addPaintListeners() {
+  let squares = document.querySelectorAll('.column');
+
+  [...squares].forEach(function(square) {
+    square.addEventListener('mouseenter', paint);
+  });
+  [...squares].forEach(function(square) {
+    square.addEventListener('mousedown', paint);
+})};
+
+// Check for LMB and paints the element
+function paint(e) {
+  if (e.which === 1) {
+    e.target.style.backgroundColor = paintColor;
+  }
+};
+
+const clear = document.querySelector('#clear');
+
+clear.addEventListener('click', () => {
+  const squares = document.querySelectorAll('.column');
+  [...squares].forEach((square) => {
+    square.classList.add('transition');
+    square.style.backgroundColor = 'white';
+    setTimeout(() => square.classList.remove('transition'), 1000);
+  });
+});
+
+const colors = document.querySelectorAll('.colors');
+[...colors].forEach((color) => {
+  color.addEventListener('click', (e) => {
+    paintColor = e.target.style.backgroundColor;
+    const currentColor = document.querySelector('#currentColor');
+    currentColor.style.backgroundColor = paintColor;
   });
 })

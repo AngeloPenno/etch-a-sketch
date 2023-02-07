@@ -13,8 +13,9 @@
   <div id="sketchSquare"></div>
   <div id="controls">
     <div class="ctrlElement">
-      <label for="amount">Select the grid size:<br>Max: 100</label>
+      <label for="amount">Select the grid size:</label>
       <input type="number" name="amount" id="amount" min="4" max="100" value="16">
+      <label id="numParam"></label>
     </div>
     <div class="ctrlElement">
       <input type="button" value="Clear" id="clear">
@@ -46,6 +47,7 @@
         <div class="colors" style="background-color: #00FFFF;"></div>
       </div>
     </div>
+    <div class="ctrlElement" id="currentColor"></div>
   </div>
 </body>
 </html>

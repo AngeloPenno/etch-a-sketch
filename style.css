@@ -44,10 +44,6 @@ h1 {
   background-color: white;
 }
 
-.paint {
-  background-color: black;
-}
-
 .ctrlElement {
   flex: auto;
 }
@@ -81,5 +77,23 @@ label {
 .colors {
   width: 20px;
   height: 20px;
-  margin: 2px;
+  margin: 4px;
+}
+
+.colors:hover {
+  box-shadow: 3px 3px #333;
+}
+
+#currentColor {
+  background-color: black;
+  width: 68px;
+  height: 68px;
+  margin: 4px;
+  flex-grow: 0;
+  box-shadow: 4px 4px #333;
+}
+
+.transition {
+  transition: 1s;
+  background-color: black;
 }
