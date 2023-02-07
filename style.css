@@ -11,6 +11,7 @@ body {
 h1 {
   text-align: center;
   margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 #sketchSquare {
@@ -30,7 +31,8 @@ h1 {
   margin-right: auto;
   margin-top: 20px;
   display: flex;
-  border: 2px solid red;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .row {
@@ -45,7 +47,7 @@ h1 {
 }
 
 .ctrlElement {
-  flex: auto;
+  flex-grow: 1;
 }
 
 label {
@@ -55,18 +57,31 @@ label {
 
 #amount {
   display: block;
-  width: 100%;
+  width: 60%;
   font-weight: bold;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #clear {
-  width: 60%;
+  width: 80%;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: 3px 3px #333;
+  background-color: darkblue;
+  color: #f4f4f4;
+  font-weight: bold;
+  margin-left: -20px;
+}
+
+#clear:active {
+  scale: 1.1;
 }
 
 #colors {
   display: flex;
   flex-direction: row;
+  margin-right: -40px;
 }
 
 .colorRows {
@@ -84,10 +99,14 @@ label {
   box-shadow: 3px 3px #333;
 }
 
+.colors:active {
+  scale: 1.1;
+}
+
 #currentColor {
   background-color: black;
-  width: 68px;
-  height: 68px;
+  width: 76px;
+  height: 76px;
   margin: 4px;
   flex-grow: 0;
   box-shadow: 4px 4px #333;

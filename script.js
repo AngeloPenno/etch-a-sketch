@@ -25,8 +25,8 @@ function createSquares(num) {
 // Changes the amount of squares based on the number inserted by the user;
 amountInput.addEventListener('change', (e) => {
   const numParam = document.querySelector('#numParam');
-  if (e.target.value > 100 || e.target.value < 4) {
-    numParam.textContent = 'Min: 4 - Max: 100';
+  if (e.target.value > 100 || e.target.value < 2) {
+    numParam.textContent = 'Min: 2 - Max: 100';
   } else {
     sketchSquare.innerHTML = '';
     amount = e.target.value;
