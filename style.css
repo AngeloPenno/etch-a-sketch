@@ -1,17 +1,36 @@
+* {
+  margin: 0;
+}
+
 body {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
 }
 
 #sketchSquare {
   width: 600px;
   height: 600px;
-  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
+}
+
+#controls {
+  width: 600px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  display: flex;
+  border: 2px solid red;
 }
 
 .row {
@@ -22,8 +41,45 @@ body {
 .column {
   /* border: 1px solid red; */
   flex: auto;
+  background-color: white;
 }
 
 .paint {
   background-color: black;
+}
+
+.ctrlElement {
+  flex: auto;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#amount {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#clear {
+  width: 60%;
+}
+
+#colors {
+  display: flex;
+  flex-direction: row;
+}
+
+.colorRows {
+  display: flex;
+  flex-direction: column;
+}
+
+.colors {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
 }

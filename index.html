@@ -9,6 +9,43 @@
   <title>TOP - Etch-a-Sketch</title>
 </head>
 <body>
+  <h1>Etch-a-Sketch</h1>
   <div id="sketchSquare"></div>
+  <div id="controls">
+    <div class="ctrlElement">
+      <label for="amount">Select the grid size:<br>Max: 100</label>
+      <input type="number" name="amount" id="amount" min="4" max="100" value="16">
+    </div>
+    <div class="ctrlElement">
+      <input type="button" value="Clear" id="clear">
+    </div>
+    <div class="ctrlElement" id="colors">
+      <div class="colorRows">
+        <div class="colors" style="background-color: #ffffff;"></div>
+        <div class="colors" style="background-color: #808080;"></div>
+        <div class="colors" style="background-color: #000000;"></div>
+      </div>
+      <div class="colorRows">
+        <div class="colors" style="background-color: #800000;"></div>
+        <div class="colors" style="background-color: #FF0000;"></div>
+        <div class="colors" style="background-color: #800080;"></div>
+      </div>
+      <div class="colorRows">
+        <div class="colors" style="background-color: #FF00FF;"></div>
+        <div class="colors" style="background-color: #008000;"></div>
+        <div class="colors" style="background-color: #00FF00;"></div>
+      </div>
+      <div class="colorRows">
+        <div class="colors" style="background-color: #808000;"></div>
+        <div class="colors" style="background-color: #FFFF00;"></div>
+        <div class="colors" style="background-color: #000080;"></div>
+      </div>
+      <div class="colorRows">
+        <div class="colors" style="background-color: #0000FF;"></div>
+        <div class="colors" style="background-color: #008080;"></div>
+        <div class="colors" style="background-color: #00FFFF;"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 let sketchSquare = document.querySelector('#sketchSquare');
-let aspect = 16;
+let aspect = 100;
 
+// Creates all the divs needed based on the aspect variable
 for (let i = 0; i < aspect; i++) {
   let row = document.createElement('div');
   row.classList.add('row');
@@ -15,10 +16,11 @@ for (let i = 0; i < aspect; i++) {
   }
 }
 
+// Listens to the mouse entering the divs while clicked and paints them
 let squares = document.querySelectorAll('.column');
 
 [...squares].forEach(function(square) {
-  square.addEventListener('mousemove', (e) => {
+  square.addEventListener('mouseenter', (e) => {
     if (e.which === 1) {
       e.target.classList.add('paint');
     }
